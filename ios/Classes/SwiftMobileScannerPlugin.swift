@@ -238,7 +238,7 @@ public class SwiftMobileScannerPlugin: NSObject, FlutterPlugin {
     
     /// Analyzes a single image
     private func analyzeImage(_ call: FlutterMethodCall, _ result: @escaping FlutterResult) {
-        let uiImage = UIImage(contentsOfFile: call.arguments as? String ?? "")
+        var uiImage = UIImage(contentsOfFile: call.arguments as? String ?? "")
 
         // WORKAROUND for pictures of various image formats
         if #available(iOS 13.0, *) {
